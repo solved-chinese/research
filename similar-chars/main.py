@@ -58,17 +58,14 @@ def find_similar_chars_by_structure(target_char, debug=False):
         if len(compare_structure) != len(target_structure):
             continue # TODO: 可能存在不同结构数量的易混字
 
-        flag = True
         for i in range(len(compare_structure)):
             if target_structure[i] == compare_structure[i] or \
                 ambiguous_counterpart.get(target_structure[i]) == compare_structure[i] or \
                 target_structure[i] == ambiguous_counterpart.get(compare_structure[i]):
                 continue
             else:
-                flag = False
                 break
-        
-        if flag:
+        else:
             result.append(compare_char)
             if debug:
                 print('({} {})'.format(target_char, compare_char))
