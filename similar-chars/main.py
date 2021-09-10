@@ -26,7 +26,7 @@ def _distance_between(img1, img2):
 
 
 def find_similar_chars_by_img(target_char, debug=False):
-    threshold = 50 * 50 ** 2
+    threshold = 60 * 50 ** 2
     result = []
 
     target_img = _generate_img_from_char(target_char)
@@ -73,7 +73,7 @@ def find_similar_chars_by_structure(target_char, debug=False):
 
 
 
-target_char = '话'
+target_char = input('汉字：') or '海'
 
 splitter = HanziChaizi()
 # ambiguous = (('言', '辵'), ('人', '彳'))
